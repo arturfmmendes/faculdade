@@ -1,0 +1,13 @@
+Explique cada uma das expressões a seguir, indicando a diferença entre elas: 
+ 
+ p++;       (*p)++;        *(p++); 
+ 
+p++; : Leva ao endereço da variável seguinte a p;
+
+(*p)++; : Adiciona 1 no conteúdo da variável que p aponta;
+
+*(p++); : Refencia o conteudo da proxima variavel depois de p;
+
+Qual informação se refere a expressão *(p+10)?
+
+Se refere ao conteudo da décima variável depois de p.
