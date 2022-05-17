@@ -31,7 +31,6 @@ int main(void)
         case 3:
             apagaTudo(BDAlunos);
     }
-    // ler dados
     return 0;
 }
 

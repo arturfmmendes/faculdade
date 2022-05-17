@@ -15,8 +15,9 @@ int main(void)
 
     //ler arquivo e armazenar em arrays de arrays
     
-   for (; getc(arq) != EOF;)
+   for (int i = 0; fgets(str, sizeof str, arq) != EOF; i++)
     {
+        //fseek(arq, -1, SEEK_CUR);
         fscanf(arq, "%f", &num);
         printf("%f\n", num);
 
