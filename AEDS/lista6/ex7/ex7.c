@@ -29,8 +29,8 @@ int main(void)
     while (c != EOF)
     {
         c = fgetc(arq);
-        printf("%c", c);
-        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') vogais++;
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U')
+            vogais++;
     }
 
     // imprimi-las na tela
