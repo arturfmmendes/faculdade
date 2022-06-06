@@ -1,0 +1,53 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+
+}
+
+.navbar
+{
+    margin: 0;
+    padding: 0.7em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+h1{
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    
+
+}
+
+li {
+    padding: 0 3em;
+}
+
+.jogo-scratch {
+    align-items: center;
+
+}
+.titulos {
+    margin: 0.5em;
+    text-align: center;
+}
+
+iframe {
+    margin: 0 auto;
+    display: block;
+
+    border-color: blue;
+    border: 30px;
+}
