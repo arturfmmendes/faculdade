@@ -11,7 +11,7 @@ Nova  string:  D  OLJHLUD  UDSRVD  PDUURP  VDOWRX  VREUH  R  FDFKRUUR
  */
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <string.h> 
 
 char * getString(char pergunta[100]);
 
@@ -19,31 +19,42 @@ int main(void)
 {
 
     int key = 3;
+    char ch;
     char *frase = getString("Digite a frase a ser encriptada:\n");
 
     int tam = strlen(frase);
 
     for (int i = 0; i < tam; i++)
     {
-        switch (frase[i])
+        ch = frase[i];
+
+        if (ch >= 'a' && ch <= 'z')
         {
-            case 'X': 
-                frase[i] -= 23;
-                break;
-            case 'Y':
-                frase[i] -= 23;
-                break;
-            case 'Z':
-            case 'x':
-            case 'y':
-            case 'z':
-        }
             
-        (frase[i] >= 65 && frase[i] <= (90 - key)) || (frase[i] >= 97 && frase[i] <= (122 - key))) frase[i] += key;
-        else if ((frase[i] >= 88 && frase[i] <= 90) || (frase[i] >= 120 && frase[i] <= 122)) frase[i] = frase[i] -  25;
+            ch = ch + key;
+
+            if(ch > 'z')
+            {
+                ch = ch - 'z' + 'a' - 1;
+            }
+            frase[i] = ch;
+        }
+        else if (ch >= 'A' && ch <= 'Z')
+        {
+            ch = ch + key;
+            
+            if(ch > 'Z')
+            {
+                ch = ch - 'Z' + 'A' - 1;
+            }
+            frase[i] = ch;
+        }
     }
-    printf("%s", frase);
+    printf("Frase encriptada: %s", frase);
 }
+
+
+
 
 char * getString(char pergunta[100]){
        
