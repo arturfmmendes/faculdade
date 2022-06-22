@@ -22,7 +22,7 @@ int main(void)
     char *iniciais;
     int contIniciais = 0;
     
-    char *vet = getString("Vetor: ");
+    char *vet = getString("Seu nome: ");
  
     //passar pela string toda
     int tamVet = strlen(vet);
@@ -42,7 +42,7 @@ int main(void)
         else if (vet[i - 1] == ' ')
         {   
             //se o 3o(no caso de 'e') ou o 4o(no caso de 'de') elemento antes deste char for espaco saia 
-            if (vet[i + 2] == ' ' || vet[i + 3] == ' ') continue;
+            if (vet[i + 1] == ' ' || vet[i + 2] == ' ' || vet[i + 3] == ' ') continue;
             //senao adicione o vet[i no endereco de iniciais + o contador delas]
             realloc(iniciais, contIniciais + 1);
             *(iniciais + contIniciais) = toupper(vet[i]);

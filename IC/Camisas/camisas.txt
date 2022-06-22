@@ -1,0 +1,11 @@
+receber o numero de premiados
+receber os tipos de camisas pedidas
+receber o numero de camisas P feitas
+receber o numero de camisas M feitas
+
+contar a quantidade de camisas P pedidas
+contar o numero de camisas M pedidas
+
+comparar se o numero de camisas pedidas de cada tipo foi igual ao numero de camisas feitas pela grafica
+
+imprimir 'S' se sim e 'N' se não

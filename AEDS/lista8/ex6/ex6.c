@@ -26,7 +26,7 @@ int main(void)
    for (int i = 0; palavra[i] != '\0'; i++)
    {
       //print letra[i] e [\n + (' ' * i)]
-      printf("%c", palavra[i])/
+      printf("%c", palavra[i]);
       printf("\n");
       for (int j = 0; j <= i; j++)
       {

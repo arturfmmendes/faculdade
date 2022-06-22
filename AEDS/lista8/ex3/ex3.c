@@ -44,6 +44,3 @@ int main(void)
     printf("Você nasceu %c%c de %s de %c%c%c%c", data[0], data[1], meses[mesF - 1], data[6], data[7], data[8], data[9]);
     return 0;
 }
-
-
-

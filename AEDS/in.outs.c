@@ -22,6 +22,8 @@ char * getString(char pergunta[100]){
         realloc(v2, i + 1);
         *(v2 + i) = vetor[i];
     }
+    realloc(v2, sizeof(v2) + 1);
+    v2[sizeof(v2) - 1] = '\0';
 
     return v2;
 }
