@@ -1,7 +1,10 @@
 import java.util.Date;
 import java.util.Scanner;
+import java.io.CharConversionException;
+import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.text.Utilities;
+import java.io.File;
 
 class Game {
 
@@ -10,12 +13,10 @@ class Game {
     private Date release_date;
     private float price, upvotes;
     private ArrayList<String> languages, genres;
-    private boolean windows;
-    private boolean mac;
-    private boolean linux;
+    private boolean windows, mac, linux;
 
     //resto das classes
-
+    
     public Game(){
 
         this.age = this.app_id = this.dlcs = this.avg_pt = -1;
@@ -24,6 +25,27 @@ class Game {
         this.price = this.upvotes = -1;
         this.windows = this.mac = this.linux = false;
 
+    }
+
+    public Game(int app_id, int age,int dlcs, int avg_pt,String name, String owners, String website, String developers, Date release_date, float price, float upvotes, ArrayList<String> languages, ArrayList<String> genres){
+        
+        setApp_id(app_id);
+        setAge(age);
+        setAvg_pt(avg_pt);
+        setDevelopers(developers);
+        setDlcs(dlcs);
+        setGenres(genres);
+        setLanguages(languages);
+        setLinux(linux);
+        setMac(mac);
+        setName(name);
+        setOwners(owners);
+        setPrice(price);
+        setRelease_date(release_date);
+        setUpvotes(upvotes);
+        setWebsite(website);
+        setWindows(windows);
+    
     }
 
     public Game clone(){
@@ -36,6 +58,7 @@ class Game {
         cloned.dlcs = dlcs;
         cloned.genres = genres;
         cloned.languages = languages;
+        cloned.windows = windows;
         cloned.linux = linux;
         cloned.mac = mac;
         cloned.name = name;
@@ -45,150 +68,102 @@ class Game {
         return cloned;
     }
 
+    public void imprimir(){
+        
+        System.out.println("App_id " + app_id);
+        System.out.println("name " + name);
+        System.out.println("age " + age);
+        System.out.println("avg_pt " + avg_pt);
+        System.out.println("developers " + developers);
+        System.out.println("dlcs " + dlcs);
+        System.out.println("genres " + genres);
+        System.out.println("languages " + languages);
+        System.out.println("windows " + windows);
+        System.out.println("linux " + linux); 
+        System.out.println("mac " + mac);
+        
+    }
+
     //MÉTODOS GETS
-    public int getAppId(){
-        return app_id;
-    }
+    public int getAge(){return age;}
 
-    public String getName() {
-        return name;
-    }
+    public int getAppId(){return app_id;}
 
-    public Date getReleaseDate(){
-        return release_date;
-    }
+    public String getName(){return name;}
 
-    public String getOwners(){
-        return owners;
-    }
+    public Date getReleaseDate(){return release_date;}
 
-    public int getAge(){
-        return age;
-    }
+    public String getOwners(){return owners;}
 
-    public float getPrice(){
-        return price;
-    }
+    public float getPrice(){return price;}
 
-    public int getDlcs(){
-        return dlcs;
-    }
+    public int getDlcs(){return dlcs;}
 
-    public ArrayList<String> getLanguages(){
-        return languages;
-    }
+    public ArrayList<String> getLanguages(){return languages;}
 
-    public String getWebsite(){
-        return website;
-    }
+    public String getWebsite(){return website;}
 
-    public boolean getWindows(){
-        return windows;
-    }
+    public boolean getWindows(){return windows;}
 
-    public boolean getMac(){
-        return mac;
-    }
+    public boolean getMac(){return mac;}
 
-    public boolean getLinux(){
-        return linux;
-    }
+    public boolean getLinux(){return linux;}
 
-    public float getUpvotes(){
-        return upvotes;
-    }
+    public float getUpvotes(){return upvotes;}
 
-    public int getAvgPt(){
-        return avg_pt;
-    }
+    public int getAvgPt(){return avg_pt;}
 
-    public String getDavelopers(){
-        return developers;
-    }
+    public String getDavelopers(){return developers;}
 
-    public String[] getGenres(){
-        return genres;
-    }
+    public ArrayList<String> getGenres(){return genres;}
 
     //MÉTODOS SETS
+    public void setApp_id(int app_id) {this.app_id = app_id;}
 
-    public void setApp_id(int app_id) {
-        this.app_id = app_id;
-    }
+    public void setAge(int age) {this.age = age;}
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+    public void setAvg_pt(int avg_pt) {this.avg_pt = avg_pt;}
 
-    public void setAvg_pt(int avg_pt) {
-        this.avg_pt = avg_pt;
-    }
+    public void setDevelopers(String developers) {this.developers = developers;}
 
-    public void setDevelopers(String developers) {
-        this.developers = developers;
-    }
+    public void setDlcs(int dlcs) {this.dlcs = dlcs;}
 
-    public void setDlcs(int dlcs) {
-        this.dlcs = dlcs;
-    }
+    public void setGenres(ArrayList<String> genres) {this.genres = genres;}
 
-    public void setGenres(String[] genres) {
-        this.genres = genres;
-    }
+    public void setLanguages(ArrayList<String> languages) {this.languages = languages;}
 
-    public void setLanguages(String[] languages) {
-        this.languages = languages;
-    }
+    public void setLinux(boolean linux) {this.linux = linux;}
 
-    public void setLinux(boolean linux) {
-        this.linux = linux;
-    }
+    public void setMac(boolean mac) {this.mac = mac;}
 
-    public void setMac(boolean mac) {
-        this.mac = mac;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name) {this.name = name;}
     
-    public void setOwners(String owners) {
-        this.owners = owners;
-    }
+    public void setOwners(String owners) {this.owners = owners;}
     
-    public void setPrice(float price) {
-        this.price = price;
-    }
+    public void setPrice(float price) {this.price = price;}
     
-    public void setRelease_date(Date release_date) {
-        this.release_date = release_date;
-    }
+    public void setRelease_date(Date release_date) {this.release_date = release_date;}
 
-    public void setUpvotes(float upvotes) {
-        this.upvotes = upvotes;
-    }
+    public void setUpvotes(float upvotes) {this.upvotes = upvotes;}
 
-    public void setWebsite(String website) {
-        this.website = website;
-    }
+    public void setWebsite(String website) {this.website = website;}
 
-    public void setWindows(boolean windows) {
-        this.windows = windows;
-    }
+    public void setWindows(boolean windows) {this.windows = windows;}
 
+    public static void converterString(){
+
+    }
 }
+
+
 
 
 class Q1 {
     public static void main(String[] args) {
 
-        Scanner x = new Scanner(System.in);
+        Game x = new Game();
 
-
-        String bling = x.nextLine();
-
-        System.out.println(bling);
-    
+        x.imprimir();
 
     }
 
