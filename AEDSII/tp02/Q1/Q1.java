@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.text.Utilities;
 import java.io.File;
+import java.io.FileNotFoundException;
 
 class Game {
 
@@ -14,8 +15,6 @@ class Game {
     private float price, upvotes;
     private ArrayList<String> languages, genres;
     private boolean windows, mac, linux;
-
-    //resto das classes
     
     public Game(){
 
@@ -70,21 +69,23 @@ class Game {
 
     public void imprimir(){
         
-        System.out.println("App_id " + app_id);
-        System.out.println("name " + name);
-        System.out.println("age " + age);
-        System.out.println("avg_pt " + avg_pt);
-        System.out.println("developers " + developers);
-        System.out.println("dlcs " + dlcs);
-        System.out.println("genres " + genres);
-        System.out.println("languages " + languages);
-        System.out.println("windows " + windows);
-        System.out.println("linux " + linux); 
-        System.out.println("mac " + mac);
+        System.out.println("App_id: " + app_id);
+        System.out.println("name: " + name);
+        System.out.println("age: " + age);
+        System.out.println("avg_pt: " + avg_pt);
+        System.out.println("developers: " + developers);
+        System.out.println("dlcs: " + dlcs);
+        System.out.println("genres: " + genres);
+        System.out.println("languages: " + languages);
+        System.out.println("windows: " + windows);
+        System.out.println("linux: " + linux); 
+        System.out.println("mac: " + mac);
         
     }
 
     //MÉTODOS GETS
+   
+
     public int getAge(){return age;}
 
     public int getAppId(){return app_id;}
@@ -118,6 +119,7 @@ class Game {
     public ArrayList<String> getGenres(){return genres;}
 
     //MÉTODOS SETS
+    
     public void setApp_id(int app_id) {this.app_id = app_id;}
 
     public void setAge(int age) {this.age = age;}
@@ -150,21 +152,61 @@ class Game {
 
     public void setWindows(boolean windows) {this.windows = windows;}
 
-    public static void converterString(){
+/* 
 
+    public void lerGames() throws FileNotFoundException{
+
+        Scanner scan = new Scanner(new File("G:/Meu Drive/Ciencia da comutacao/Codando/faculdade/AEDSII/tp02/Q1/games.csv"));
+        int contador = 0;
+        String[] linhasJogos = new String[4403];
+       
+        //coloca as lionhas dos dados dos jogos em strings separadas
+       while(scan.hasNext()){
+
+            linhasJogos[contador] = scan.nextLine();
+            contador++;
+
+        }
+
+        for (int j = 0; j < contador; j++){
+
+            converterLinha(linhasJogos[contador]);
+
+        }
+    } 
+    
+    public static void converterLinha(String jogo){
+        
+        String[] dadosSeperados = jogo.split(",");
+
+        MyIO.print(dadosSeperados[0]);
+        
     }
-}
+   
 
+    private static boolean fim(String str) {
 
+        return (str.charAt(0) == 'F' 
+                && str.charAt(1) == 'I' 
+                && str.charAt(2) == 'M');
+    }
+*/
 
-
-class Q1 {
-    public static void main(String[] args) {
+    public static void main(String[] args)throws IOException{
 
         Game x = new Game();
 
+
         x.imprimir();
-
     }
+}
 
+class Q1 {
+/*
+ * public static void main(String[] args){
+        
+    }
+ * 
+ */
+    
 }

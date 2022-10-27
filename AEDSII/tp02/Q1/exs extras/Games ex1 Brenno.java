@@ -356,7 +356,7 @@ class Games {
     // Metodo de Ler
     public static void ler(String pubIn) throws IOException, ParseException{
         Scanner sc = new Scanner (new File("/tmp/games.csv"));  
-        String[] entradas = new String [4403]; 
+        String[] entradas = new String[4403]; 
         int cont = 0; 
 
         // Ler enquanto o arquivo existir
@@ -384,9 +384,10 @@ class Games {
 
     public static void main(String[] args) throws IOException, ParseException {
         String pubIn = "";
+        Scanner scaner = new Scanner(new File("/games.csv"));
 
         do {
-            pubIn = MyIO.readLine();
+            pubIn = scaner.nextLine();
             ler(pubIn);
         } while(fim(pubIn) != true); 
     }
